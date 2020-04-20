@@ -1,0 +1,7 @@
+.link {
+  text-decoration: none;
+
+.btn:hover,
+.btn-focus {
+  opacity: .75;
+}
