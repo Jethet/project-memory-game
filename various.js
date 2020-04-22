@@ -52,5 +52,5 @@ const doSomething = async () => {
 doSomething()
 
 
-// Randomize properties, example: color
-this.color = colors[Math.floor(Math.rondom() * colors.length)]
+// Randomize properties, example: random color from an array of colors
+this.color = colors[Math.floor(Math.random() * colors.length)]
