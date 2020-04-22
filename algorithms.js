@@ -14,3 +14,7 @@ function getIndexToIns(arr, num) {
   return num;
 }
 
+// Falsy values in JavaScript are false, null, 0, "", undefined, and NaN. Check these with:
+if (value) {
+  // do something
+  }
