@@ -49,5 +49,8 @@ const doSomething = async () => {
     console.log('🦄')    
   }
 }
-
 doSomething()
+
+
+// Randomize properties, example: color
+this.color = colors[Math.floor(Math.rondom() * colors.length)]
