@@ -54,3 +54,10 @@ doSomething()
 
 // Randomize properties, example: random color from an array of colors
 this.color = colors[Math.floor(Math.random() * colors.length)]
+
+// Create id's for items with JavaScript:
+if (data.items.length > 0) {
+  ID = data.items[data.items.length - 1].id + 1;
+} else {
+  ID = 0;
+}
