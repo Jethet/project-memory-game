@@ -61,3 +61,18 @@ if (data.items.length > 0) {
 } else {
   ID = 0;
 }
+
+
+// Change state with button: React hooks
+function Room() {
+  const [isLit, setLit] = React.useState(false)
+
+  return (
+    <div className="room">
+      The room is {isLit ? 'lit' : 'dark'}
+      <br />
+      <button onClick={() => setLit(!isLit)}>
+        Change
+      </button>
+    </div>
+  )
