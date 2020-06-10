@@ -76,3 +76,6 @@ function Room() {
       </button>
     </div>
   )
+
+  const date = new Date().toLocaleDateString()
+// gives format dd/mm/yyyy
