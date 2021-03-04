@@ -1,0 +1,23 @@
+{
+  "name": "project-notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon indexjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jethet/project-notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jethet/project-notes-app/issues"
+  },
+  "homepage": "https://github.com/Jethet/project-notes-app#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
