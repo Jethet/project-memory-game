@@ -20,7 +20,7 @@ header h1 {
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
-  grid-template-rows: repeat(5,80px);
+  grid-template-rows: repeat(5,60px);
   border: thin solid gray;
 }
 
@@ -28,6 +28,7 @@ header h1 {
   background-color: lightskyblue;
   border: thin solid gray;
 }
+
 
 /* @media only screen and (max-width: 550px) {
   .container {
