@@ -14,7 +14,6 @@ header h1 {
 .grid-container {
   width: 90%;
   height: 50vh;
-
 }
 
 .grid {
@@ -29,6 +28,11 @@ header h1 {
   border: thin solid gray;
 }
 
+.explanation-text {
+  border: 1px solid green;
+  color: steelblue;
+
+}
 
 /* @media only screen and (max-width: 550px) {
   .container {
