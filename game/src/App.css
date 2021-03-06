@@ -12,7 +12,6 @@ header h1 {
 }
 
 .grid-container {
-  border: 1px solid red;
   width: 90%;
   height: 50vh;
 
@@ -20,13 +19,14 @@ header h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: 5fr 5fr 5fr;
-  grid-template-rows: 130px 130px 130px;
-  grid-gap: 3px;
+  grid-template-columns: repeat(5, 5fr);
+  grid-template-rows: repeat(5,80px);
+  border: thin solid gray;
 }
 
-.grid div {
-  background-color: teal;
+.grid-cell {
+  background-color: lightskyblue;
+  border: thin solid gray;
 }
 
 /* @media only screen and (max-width: 550px) {
