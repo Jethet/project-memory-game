@@ -4,7 +4,7 @@ function Header() {
 
   return (
     <div>
-      <header className="App-header">
+      <header className="app-header">
         <h1>Welcome to the Memory Game!</h1>
       </header>
     </div>
