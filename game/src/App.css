@@ -21,7 +21,7 @@
 .grid-container {
   width: 90%;
   height: 45vh;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .grid {
@@ -34,6 +34,29 @@
 .grid-cell {
   background-color: lightskyblue;
   border: thin solid gray;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.button-play {
+  background-color: lightskyblue;
+  /* color: cornsilk; */
+  border: thin solid gray;
+  padding: 20px;
+  border-radius: 35px;
+}
+
+.button-clear {
+  background-color: lightskyblue;
+  /* color: cornsilk; */
+  padding: 20px;
+  border: thin solid gray;
+  border-radius: 35px;
 }
 
 .explanation-text {
@@ -54,7 +77,7 @@
 @media only screen and (max-width: 550px) {
   .app-header {
     margin: 20px 50px 30px 40px;
-    padding-left: 80px;
+    padding-left: 70px;
     /* padding-right: 30px; */
     font-size: 1.2rem;
     color: steelblue;

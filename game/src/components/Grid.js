@@ -38,6 +38,10 @@ function Grid() {
           <Cell />
         </div>
       </div>
+      <div className="button-container">
+        <button className="button-play">PLAY</button>
+        <button className="button-clear">CLEAR</button>
+      </div>
       <div className="explanation-text">
         <h3 className="explanation-header">How to play:</h3>
         <p>Click the PLAY button and memorise the coloured cells.</p>
