@@ -1,5 +1,6 @@
 import React from "react";
 import Cell from "./Cell";
+import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
   return (
@@ -38,11 +39,7 @@ function Grid() {
           <Cell />
         </div>
       </div>
-      <div className="button-container">
-        <button className="button-play">PLAY</button>
-        <button className="button-clear">CLEAR</button>
-      </div>
-     
+      <ButtonContainer />
     </div>
   );
 }
