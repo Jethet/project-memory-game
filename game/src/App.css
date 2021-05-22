@@ -29,12 +29,14 @@
   display: grid;
   grid-template-columns: repeat(5, 5fr);
   grid-template-rows: repeat(6, 60px);
-  border: thin solid gray;
+  /* border: thin solid gray; */
 }
 
 .grid-cell {
   background-color: lightskyblue;
   border: thin solid gray;
+  border-radius: 50px;
+  margin: 10px;
 }
 
 .button-container {
