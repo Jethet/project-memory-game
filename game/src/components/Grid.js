@@ -3,7 +3,7 @@ import Cell from "./Cell";
 import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState({style: "white"});
 
   function changeColor() {
     setColor({style: "green"})    
