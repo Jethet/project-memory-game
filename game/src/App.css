@@ -28,41 +28,49 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
-  grid-template-rows: repeat(6, 60px);
+  grid-template-rows: repeat(5, 75px);
   /* border: thin solid gray; */
 }
 
 .grid-cell {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   border: thin solid gray;
   border-radius: 50px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .button-container {
   display: flex;
   justify-content: space-around;
   width: 90%;
-  margin-top: 20px;
+  margin-top: 25px;
   margin-bottom: 15px;
 }
 
 .button-play {
   background-color: rgb(166, 235, 8);
   border: thin solid gray;
-  padding: 20px;
+  padding: 23px;
   border-radius: 35px;
   font-size: 1.2em;
   font-weight: 900;
 }
 
+.button-play:hover {
+  background-color: rgb(129, 182, 6);
+}
+
 .button-clear {
-  background-color: rgb(230, 250, 46);
+  background-color: rgb(228, 247, 58);
   padding: 15px;
   border: thin solid gray;
   border-radius: 35px;
   font-size: 1.2em;
   font-weight: 900;
+}
+
+.button-clear:hover {
+  background-color: rgb(200, 218, 42);
 }
 
 .explanation-text {

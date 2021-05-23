@@ -1,17 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react"
+// import { useState, useEffect } from "react";
 
-function Cell() {
+function Cell(props) {
 
-  const [color, setColor] = useState(null)
-
-
-
-  return (
-    <div className="grid-cell">
-    Cell
-    </div>
-  );
+  return <div className="grid-cell" style={{background: "blue"}}></div>;
 }
 
 export default Cell;

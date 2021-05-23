@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Cell from "./Cell";
 import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
+  const [color, setColor] = useState("white");
+
+  function changeColor() {
+    setColor({style: "green"})    
+  }
+
   return (
     <div className="wrapper">
       <div className="grid-container">
         <div className="grid">
+          <Cell color={color} />
+          <Cell color={color} />
+          <Cell color={color} />
+          <Cell color={color} />
+          {/* <Cell />
           <Cell />
           <Cell />
           <Cell />
@@ -26,20 +37,10 @@ function Grid() {
           <Cell />
           <Cell />
           <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
-          <Cell />
+          <Cell /> */}
         </div>
       </div>
-      <ButtonContainer />
+      <ButtonContainer changeColor={changeColor}/>
     </div>
   );
 }
