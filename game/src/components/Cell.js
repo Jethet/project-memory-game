@@ -3,7 +3,7 @@ import React from "react";
 
 function Cell(props) {
 
-  return <div className="grid-cell" style={{background: "blue"}}></div>;
+  return <div className="grid-cell" style={{background: props.color}}></div>;
 }
 
 export default Cell;
