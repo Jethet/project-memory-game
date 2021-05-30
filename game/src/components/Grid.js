@@ -39,18 +39,18 @@ function Grid() {
     }
   }
 
-  function randomCellsColoring(e) {
-    randomBlueArray = whiteArray[Math.floor(Math.random() * arr.length)]
-    console.log(randomBlueArray);
+  // function randomCellsColoring(e) {
+  //   randomBlueArray = whiteArray[Math.floor(Math.random() * arr.length)]
+  //   console.log(randomBlueArray);
     
-  }
+  // }
 
   return (
     <div className="wrapper">
       <div className="grid-container">
         <div className="grid">
           {whiteArray.map((item, index) => {
-            return <Cell key={index} color={item} />;
+            return <Cell key={index} color={item} id={index} />;
           })}
         </div>
       </div>
