@@ -24,26 +24,32 @@ function Grid() {
     "white",
     "white",
     "white",
-    "white",
-    "white",
-    "white",
-    "white",
-    "white",
   ];
   const [color, setColor] = useState("white");
 
-  function changeColor(e) {
-    e.preventDefault();
+  function changeColor() {
     if (color === "white") {
       setColor("blue");
     }
   }
 
-  // function randomCellsColoring(e) {
-  //   randomBlueArray = whiteArray[Math.floor(Math.random() * arr.length)]
-  //   console.log(randomBlueArray);
-    
-  // }
+  function randomCellsArray(number) {
+    let randomArray = []
+    while (randomArray.length < number) {
+      let randomCell = whiteArray[Math.floor(Math.random() * whiteArray.length)];
+  
+      console.log(randomCell);
+  
+      if (number > whiteArray.length) {
+        console.log("Array length exceeded");
+        return;
+      }
+      if (!randomArray.includes(randomCell)) {
+        randomArray.push(randomCell);
+      }
+    }
+    changeColor(randomArray);
+  }
 
   return (
     <div className="wrapper">
@@ -55,7 +61,7 @@ function Grid() {
         </div>
       </div>
       <div>
-        <ButtonContainer changeColor={changeColor} />
+        <ButtonContainer randomCellsArray={randomCellsArray} number={7}/>
       </div>
     </div>
   );

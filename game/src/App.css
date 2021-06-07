@@ -6,9 +6,21 @@
   max-width: 1140px;
 }
 
+.app-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.welcome-text {
+  display: flex;
+  justify-content: center;
+  width: 55%;
+}
+
 .app-header h1 {
-  margin: 20px 20px 40px 20px;
-  font-size: 2.5rem;
+  display: flex;
+  font-size: 1.5rem;
   color: steelblue;
 }
 
@@ -22,14 +34,12 @@
 .grid-container {
   /* height: 65vh; */
   width: 90%;
-  border: 1px solid green;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
-  grid-template-rows: repeat(5, 75px);
-  /* border: thin solid gray; */
+  grid-template-rows: repeat(4, 75px);
 }
 
 .grid-cell {
@@ -43,7 +53,7 @@
   display: flex;
   /* justify-content: space-between; */
   /* width: 90%; */
-  margin: 25px;
+  margin: 10px;
   /* border: 1px solid red; */
 }
 
@@ -76,37 +86,9 @@
 }
 
 .explanation-text {
-  border: 1px solid red;
-  width: 75%;
-  font-size: 1.5em;
+  width: 80%;
 }
 
 .explanation-text p {
   font-weight: 600;
-}
-
-@media only screen and (max-width: 550px) {
-  .app-header {
-    margin: 20px 50px 30px 40px;
-    padding-left: 70px;
-    /* padding-right: 30px; */
-    font-size: 1.2rem;
-    color: steelblue;
-  }
-  
-  .explanation-text {
-    font-size: 1.3em;
-  }
-
-  /* .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
-    grid-template-areas:
-      "nav"
-      "sidebar"
-      "main"
-      "about"
-      "contact"
-      "footer";
-  } */
 }

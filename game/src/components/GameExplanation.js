@@ -1,16 +1,14 @@
 import React from "react";
 
 function GameExplanation() {
-
   return (
-      <div className="explanation-text">
-        <p>Click the PLAY button and memorise the coloured cells.</p>
-        <p>
-          After the cells go white, click on the cells you want to fill with colour. If
-          you are correct, the cell with turn green. If you are wrong, the cell will
-          return red.
-        </p>
-      </div>
+    <div className="explanation-text">
+      <p>
+        Click the PLAY button and memorise the coloured cells. After the cells turn white
+        again, see if you remember the ones that were coloured. If you click the right
+        cell, it with turn green. If you are wrong, the cell will return red.
+      </p>
+    </div>
   );
 }
 
