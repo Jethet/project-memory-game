@@ -10,6 +10,13 @@ let cellArray = [
   "white7",
   "white8",
   "white9",
+  "white10",
+  "white11",
+  "white12",
+  "white13",
+  "white14",
+  "white15",
+  "white16",
 ];
 
 function randomCells(number) {
