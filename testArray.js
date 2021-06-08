@@ -1,4 +1,3 @@
-let randomArray = [];
 let cellArray = [
   "white0",
   "white1",
@@ -19,12 +18,11 @@ let cellArray = [
   "white16",
 ];
 
-function randomCells(number) {
+let randomCells = (number) => {
+  let randomArray = [];
 
   while (randomArray.length < number) {
     let randomCell = cellArray[Math.floor(Math.random() * cellArray.length)];
-
-    console.log(randomCell);
 
     if (number > cellArray.length) {
       console.log("Array length exceeded");
@@ -34,7 +32,10 @@ function randomCells(number) {
       randomArray.push(randomCell);
     }
   }
-  return randomArray;
+  return randomArray
 }
 
-console.log(randomCells(7));
+let newArray = randomCells(7)
+console.log(newArray);
+
+// console.log(randomCells(7));
