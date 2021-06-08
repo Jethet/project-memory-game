@@ -10,44 +10,51 @@ function Grid() {
     "white",
     "white",
     "white",
+    "blue",
+    "white",
+    "blue",
+    "blue",
+    "blue",
+    "white",
+    "blue",
     "white",
     "white",
     "white",
     "white",
     "white",
-    "white",
-    "white",
-    "white",
-    "white",
-    "white",
-    "white",
-    "white",
-    "white",
+    "blue",
     "white",
   ];
   const [color, setColor] = useState("white");
 
-  function changeColor(color) {
+  const changeColor = () => {
     if (color === "white") {
       setColor("blue");
     }
+    if (color === "blue") {
+      setColor("white");
+    }
   }
 
+  // Where do I add that number of cells must be 7 ??
   function colorRandomCells(number) {
     let randomArray = []
     while (randomArray.length < number) {
       let randomCell = cellsArray[Math.floor(Math.random() * cellsArray.length)];
-  
+      // if (randomArray.length === number) {
+      //   return randomArray
+      // }
+      if (!randomArray.includes(randomCell)) {
+        randomArray.push(randomCell);
+      }
       console.log(randomCell);
   
       if (number > cellsArray.length) {
         console.log("Array length exceeded");
         return;
       }
-      if (!randomArray.includes(randomCell)) {
-        randomArray.push(randomCell);
-      }
     }
+    console.log(randomArray);
     changeColor(randomArray);
   }
 
@@ -55,13 +62,13 @@ function Grid() {
     <div className="wrapper">
       <div className="grid-container">
         <div className="grid">
-          {cellsArray.map((item, cellIndex) => {
-            return <Cell key={index} color={item} id={cellIndex} />;
+          {cellsArray.map((item, index) => {
+            return <Cell key={index} color={item} id={index} />;
           })}
         </div>
       </div>
       <div>
-        <ButtonContainer colorRandomCells={colorRandomCells} number={7}/>
+        <ButtonContainer colorRandomCells={colorRandomCells}/>
       </div>
     </div>
   );

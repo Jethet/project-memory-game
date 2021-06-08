@@ -20,8 +20,8 @@
 
 .app-header h1 {
   display: flex;
-  font-size: 1.5rem;
-  color: steelblue;
+  font-size: 2rem;
+  color: blue;
 }
 
 .wrapper {
@@ -39,11 +39,10 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
-  grid-template-rows: repeat(4, 75px);
+  grid-template-rows: repeat(4, 60px);
 }
 
 .grid-cell {
-  /* background-color: lightskyblue; */
   border: thin solid gray;
   border-radius: 50px;
   margin: 5px;
