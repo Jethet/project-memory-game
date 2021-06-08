@@ -1,6 +1,6 @@
 import React from "react";
 
-function GameExplanation(props) {
+function ButtonContainer(props) {
 
   const handleClick = () => {
     props.selectRandom(7)
@@ -14,4 +14,4 @@ function GameExplanation(props) {
   )
 }
 
-  export default GameExplanation
+export default ButtonContainer

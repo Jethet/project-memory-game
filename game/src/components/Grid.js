@@ -27,6 +27,12 @@ function Grid() {
   ];
   const [color, setColor] = useState("white");
 
+  const colorCells = () => {
+    if (color === "white") {
+      setColor("blue")
+    }
+  }
+
   const resetGrid = () => {
     if (color === "blue") {
       setColor("white");
@@ -43,36 +49,9 @@ function Grid() {
         randomIndexes.push(randomIndex)
       }
     }
-    console.log(randomIndexes); 
-  }
-
-  //   console.log("First log", number);
-  //   if (number === undefined) {
-  //     console.log("We need a number");
-  //     return
-  //   }
-  //   let randomArray = []
-  //   while (randomArray.length < number) {
-  //     let randomCell = cellsArray[Math.floor(Math.random() * cellsArray.length)];
-      
-  //     console.log("randomCell", randomCell);
-  //     console.log("randomArray", randomArray);
-
-      
-  //     if (!randomArray.includes(randomCell)) {
-  //       console.log("push");
-  //       randomArray.push(randomCell);
-  //     }
-  //     console.log(randomCell);
+    console.log(randomIndexes);
   
-  //     if (number > cellsArray.length) {
-  //       console.log("Array length exceeded");
-  //       return;
-  //     }
-  //   }
-  //   console.log(randomArray);
-  // }
-
+}
   return (
     <div className="wrapper">
       <div className="grid-container">
