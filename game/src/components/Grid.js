@@ -3,7 +3,7 @@ import Cell from "./Cell";
 import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
-  const whiteArray = [
+  const cellsArray = [
     "white",
     "white",
     "white",
@@ -27,20 +27,20 @@ function Grid() {
   ];
   const [color, setColor] = useState("white");
 
-  function changeColor() {
+  function changeColor(color) {
     if (color === "white") {
       setColor("blue");
     }
   }
 
-  function randomCellsArray(number) {
+  function colorRandomCells(number) {
     let randomArray = []
     while (randomArray.length < number) {
-      let randomCell = whiteArray[Math.floor(Math.random() * whiteArray.length)];
+      let randomCell = cellsArray[Math.floor(Math.random() * cellsArray.length)];
   
       console.log(randomCell);
   
-      if (number > whiteArray.length) {
+      if (number > cellsArray.length) {
         console.log("Array length exceeded");
         return;
       }
@@ -55,13 +55,13 @@ function Grid() {
     <div className="wrapper">
       <div className="grid-container">
         <div className="grid">
-          {whiteArray.map((item, index) => {
-            return <Cell key={index} color={item} id={index} />;
+          {cellsArray.map((item, cellIndex) => {
+            return <Cell key={index} color={item} id={cellIndex} />;
           })}
         </div>
       </div>
       <div>
-        <ButtonContainer randomCellsArray={randomCellsArray} number={7}/>
+        <ButtonContainer colorRandomCells={colorRandomCells} number={7}/>
       </div>
     </div>
   );
