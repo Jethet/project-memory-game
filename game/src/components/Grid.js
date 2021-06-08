@@ -10,53 +10,68 @@ function Grid() {
     "white",
     "white",
     "white",
-    "blue",
-    "white",
-    "blue",
-    "blue",
-    "blue",
-    "white",
-    "blue",
     "white",
     "white",
     "white",
     "white",
     "white",
-    "blue",
+    "white",
+    "white",
+    "white",
+    "white",
+    "white",
+    "white",
+    "white",
+    "white",
     "white",
   ];
   const [color, setColor] = useState("white");
 
-  const changeColor = () => {
-    if (color === "white") {
-      setColor("blue");
-    }
+  const resetGrid = () => {
     if (color === "blue") {
       setColor("white");
     }
   }
 
-  // Where do I add that number of cells must be 7 ??
-  function colorRandomCells(number) {
-    let randomArray = []
-    while (randomArray.length < number) {
-      let randomCell = cellsArray[Math.floor(Math.random() * cellsArray.length)];
-      // if (randomArray.length === number) {
-      //   return randomArray
-      // }
-      if (!randomArray.includes(randomCell)) {
-        randomArray.push(randomCell);
-      }
-      console.log(randomCell);
+  function selectRandom(number) {
+    let randomIndexes = []
+
+    while (randomIndexes.length < number) {
+      let randomIndex = Math.floor(Math.random() * cellsArray.length)
   
-      if (number > cellsArray.length) {
-        console.log("Array length exceeded");
-        return;
+      if (!randomIndexes.includes(randomIndex)) {
+        randomIndexes.push(randomIndex)
       }
     }
-    console.log(randomArray);
-    changeColor(randomArray);
+    console.log(randomIndexes); 
   }
+
+  //   console.log("First log", number);
+  //   if (number === undefined) {
+  //     console.log("We need a number");
+  //     return
+  //   }
+  //   let randomArray = []
+  //   while (randomArray.length < number) {
+  //     let randomCell = cellsArray[Math.floor(Math.random() * cellsArray.length)];
+      
+  //     console.log("randomCell", randomCell);
+  //     console.log("randomArray", randomArray);
+
+      
+  //     if (!randomArray.includes(randomCell)) {
+  //       console.log("push");
+  //       randomArray.push(randomCell);
+  //     }
+  //     console.log(randomCell);
+  
+  //     if (number > cellsArray.length) {
+  //       console.log("Array length exceeded");
+  //       return;
+  //     }
+  //   }
+  //   console.log(randomArray);
+  // }
 
   return (
     <div className="wrapper">
@@ -68,7 +83,7 @@ function Grid() {
         </div>
       </div>
       <div>
-        <ButtonContainer colorRandomCells={colorRandomCells}/>
+        <ButtonContainer selectRandom={selectRandom}/>
       </div>
     </div>
   );
