@@ -1,10 +1,13 @@
 import React from "react";
-// import { useState, useEffect } from "react";
 
 function Cell(props) {
+
+  const handleClick = () => {
+    console.log("Clicked", props.color);
+  }
+
   return (
-    <div className="grid-cell" id={props.id} style={{ background: props.color }}>
-      {props.id}
+    <div className="grid-cell" style={{ background: props.color }} onClick={handleClick}>
     </div>
   );
 }

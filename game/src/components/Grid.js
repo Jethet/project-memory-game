@@ -1,52 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Cell from "./Cell";
 import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
-  const [color, setColor] = useState("white");
+  const [cells, setCells] = useState(initialState());
   
-  const cellsArray = [];
-
-  for (let i = 0; i < 25; i++) {
-    cellsArray.push(i);
-  }  
+  function initialState() {
+    let cellsArray = []
+    for (let i = 0; i < 25; i++) {
+      cellsArray.push({ key: i, color: "white" });
+    }
+    return cellsArray
+  }
 
   function selectRandom(number) {
     let randomIndexes = [];
     while (randomIndexes.length < number) {
-      let randomIndex = Math.floor(Math.random() * cellsArray.length);
+      let randomIndex = Math.floor(Math.random() * cells.length);
       if (!randomIndexes.includes(randomIndex)) {
         randomIndexes.push(randomIndex);
       }
     }
-    console.log(randomIndexes);
-    }
+    return randomIndexes
+  }
 
-  // useEffect(() => {
-  // }, [color])
-
-
-  const colorCells = () => {
-    setColor("blue");
+  const colorBlue = (randomIndexes, color) => {
+    let newCellsState = cells.slice()
+    color = "blue"
+    randomIndexes.map(item => newCellsState[item].color = color)
+    setCells(newCellsState)
+    setTimeout(blueToWhite, 2000)
   };
-
-  console.log("Test", color);
+  
+  const blueToWhite = (randomIndexes) => {
+    randomIndexes.color = "white"
+  }
 
   const resetGrid = () => {
-      setColor("white");
+    let newCellsState = cells.slice()
+    newCellsState.map(item => item.color = "white")
+    setCells(newCellsState)
   };
 
   return (
     <div className="wrapper">
       <div className="grid-container">
         <div className="grid">
-          {cellsArray.map((item, index) => {
-            return <Cell key={index} color={color} id={item} />;
+          {cells.map((cell) => {
+            return <Cell key={cell.key} color={cell.color} id={cell.key}/>;
           })}
         </div>
       </div>
-        <ButtonContainer selectRandom={selectRandom} resetGrid={resetGrid} colorCells={colorCells} />
-      </div>
+      <ButtonContainer
+        selectRandom={selectRandom}
+        resetGrid={resetGrid}
+        colorBlue={colorBlue}
+      />
+    </div>
   );
 }
 
