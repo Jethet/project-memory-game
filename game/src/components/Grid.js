@@ -5,6 +5,8 @@ import ButtonContainer from "./ButtonContainer";
 function Grid() {
   const [cells, setCells] = useState(initialState());
   
+  // create an array of 25 cells with key and color properties; 
+  // this is the initial state of the grid
   function initialState() {
     let cellsArray = []
     for (let i = 0; i < 25; i++) {
@@ -13,6 +15,7 @@ function Grid() {
     return cellsArray
   }
 
+  // create an array of random cells (this is used by the PLAY button) 
   function selectRandom(number) {
     let randomIndexes = [];
     while (randomIndexes.length < number) {
@@ -24,16 +27,19 @@ function Grid() {
     return randomIndexes
   }
 
+  // the random cells become blue when the PLAY button is clicked
   const colorBlue = (randomIndexes, color) => {
     let newCellsState = cells.slice()
     color = "blue"
     randomIndexes.map(item => newCellsState[item].color = color)
     setCells(newCellsState)
-    setTimeout(blueToWhite, 2000)
+    // after five seconds, the cells turn white again
+    setTimeout(resetGrid, 5000)
   };
-  
-  const blueToWhite = (randomIndexes) => {
-    randomIndexes.color = "white"
+
+  // the random cells that were blue turn green when user clicks correctly
+  const colorGreen = () => {
+    
   }
 
   const resetGrid = () => {
