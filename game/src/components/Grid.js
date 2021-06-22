@@ -37,15 +37,13 @@ function Grid() {
     setTimeout(resetGrid, 5000)
   };
 
-  // the random cells that were blue turn green when user clicks correctly
-  const colorGreen = () => {
-    
-  }
 
+  // reset entire grid to original state
   const resetGrid = () => {
-    let newCellsState = cells.slice()
-    newCellsState.map(item => item.color = "white")
-    setCells(newCellsState)
+    setCells(initialState())
+    // let newCellsState = cells.slice()
+    // newCellsState.map(item => item.color = "white")
+    // setCells(newCellsState)
   };
 
   return (
