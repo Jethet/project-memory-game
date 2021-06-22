@@ -10,7 +10,7 @@ function Grid() {
   function initialState() {
     let cellsArray = []
     for (let i = 0; i < 25; i++) {
-      cellsArray.push({ key: i, color: "white" });
+      cellsArray.push({ key: i, color: "lightgrey" });
     }
     return cellsArray
   }

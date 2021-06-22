@@ -3,7 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1140px;
+  max-width: 900px;
+  max-height: 100%;
+  background-color: rgb(17, 31, 31);
 }
 
 .app-header {
@@ -15,13 +17,15 @@
 .welcome-text {
   display: flex;
   justify-content: center;
-  width: 55%;
+  width: 57%;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .app-header h1 {
   display: flex;
-  font-size: 2rem;
-  color: blue;
+  font-size: 2.5rem;
+  color: rgb(161, 161, 157);
 }
 
 .wrapper {
@@ -32,47 +36,45 @@
 }
 
 .grid-container {
-  /* height: 65vh; */
+  height: 50vh;
   width: 90%;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
-  grid-template-rows: repeat(5, 60px);
+  grid-template-rows: repeat(5, 70px);
 }
 
 .grid-cell {
-  border: thin solid gray;
+  border: thin solid black;
   border-radius: 50px;
   margin: 5px;
 }
 
 .button-container {
   display: flex;
-  /* justify-content: space-between; */
-  /* width: 90%; */
   margin: 10px;
-  /* border: 1px solid red; */
 }
 
 .button-play {
-  background-color: rgb(166, 235, 8);
+  background-color: rgb(42, 43, 39);
   border: thin solid gray;
   padding: 10px;
   margin-right: 10px;
   border-radius: 35px;
+  color:lightgray;
   font-size: 1.2em;
   font-weight: 900;
 }
 
 .button-play:hover {
-  background-color: rgb(129, 182, 6);
+  background-color: rgb(33, 34, 30);
 }
 
 .button-clear {
-  background-color: rgb(228, 247, 58);
-  /* padding: 15px; */
+  background-color: rgb(78, 78, 72);
+  color:lightgray;
   margin-left: 10px;
   border: thin solid gray;
   border-radius: 35px;
@@ -81,13 +83,16 @@
 }
 
 .button-clear:hover {
-  background-color: rgb(200, 218, 42);
+  background-color: rgb(33, 34, 30);
 }
 
 .explanation-text {
   width: 80%;
+  border: 1px solid red;
+
 }
 
 .explanation-text p {
   font-weight: 600;
+  color: rgb(161, 161, 157);
 }
