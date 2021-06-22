@@ -1,4 +1,5 @@
 import React from "react";
+import GameExplanation from "./GameExplanation"
 
 function Header() {
   return (
@@ -7,6 +8,7 @@ function Header() {
         <div className="welcome-text">
           <h1>Welcome to the Memory Game!</h1>
         </div>
+        <GameExplanation />
       </div>
     </div>
   );

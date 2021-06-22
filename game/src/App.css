@@ -1,12 +1,4 @@
-html, body, div, h1, h2, h3, h4, h5, h6, p, a, img, small, b, i, ol, ul, li {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-.App {
+body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -18,21 +10,34 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, a, img, small, b, i, ol, ul, li {
 
 .app-header {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .welcome-text {
   display: flex;
   justify-content: center;
   width: 57%;
-  margin-top: 10px;
-  margin-bottom: 15px;
 }
 
 .app-header h1 {
-  display: flex;
   font-size: 2.5rem;
+  color: rgb(161, 161, 157);
+  padding: none;
+}
+
+.explanation-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72%;
+  margin-bottom: 20px;
+}
+
+.explanation-text p {
+  display: flex;
+  margin: 0;
+  font-weight: 700;
   color: rgb(161, 161, 157);
 }
 
@@ -40,7 +45,6 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, a, img, small, b, i, ol, ul, li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
 }
 
 .grid-container {
@@ -51,18 +55,17 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, a, img, small, b, i, ol, ul, li {
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 5fr);
-  grid-template-rows: repeat(5, 70px);
+  grid-template-rows: repeat(5, 75px);
 }
 
 .grid-cell {
-  border: thin solid black;
-  border-radius: 50px;
-  margin: 5px;
+  border-radius: 100px;
+  margin: 4px;
 }
 
 .button-container {
   display: flex;
-  margin: 10px;
+  margin-top: 40px;
 }
 
 .button-play {
@@ -94,13 +97,3 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, a, img, small, b, i, ol, ul, li {
   background-color: rgb(33, 34, 30);
 }
 
-.explanation-text {
-  width: 80%;
-  border: 1px solid red;
-
-}
-
-.explanation-text p {
-  font-weight: 600;
-  color: rgb(161, 161, 157);
-}

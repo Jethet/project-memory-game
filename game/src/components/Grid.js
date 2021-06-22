@@ -30,7 +30,7 @@ function Grid() {
   // the random cells become blue when the PLAY button is clicked
   const colorBlue = (randomIndexes, color) => {
     let newCellsState = cells.slice()
-    color = "blue"
+    color = "rgb(24, 73, 73)"
     randomIndexes.map(item => newCellsState[item].color = color)
     setCells(newCellsState)
     // after five seconds, the cells turn white again
