@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 function Cell(props) {
-  const [cellColor, setCellColor] = useState(props.color)
-  console.log("First log:", cellColor);
-
   const handleClick = () => {
-    // console.log("Clicked", props.color);
-    console.log("Second log:", cellColor);
-    
-  }
+    console.log("Clicked", props.id);
+    let correctColor = "green"
+    let incorrectColor = "red"
+    if (props.id in props.correctChoices) {
+      props.background = correctColor
+    } else {
+      props.background = incorrectColor
+    }
+  };
 
   return (
-    <div className="grid-cell" style={{ background: props.color }} onClick={handleClick}>
-    </div>
+    <div
+      className="grid-cell"
+      style={{ background: props.color }}
+      onClick={handleClick}
+    ></div>
   );
 }
 
