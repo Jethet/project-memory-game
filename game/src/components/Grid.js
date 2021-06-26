@@ -4,8 +4,8 @@ import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
   const [cells, setCells] = useState(initialState());
-  // const [correctChoices, setCorrectChoices] = useState([]);
-  let correctChoices = []
+  const [correctChoices, setCorrectChoices] = useState([]);
+  // let correctChoices = []
 
   // create an array of 25 cells with key and color properties;
   // this is the initial state of the grid
@@ -41,13 +41,13 @@ function Grid() {
 
   // put values of choices into global variable correctChoices
   // e.g. from handleClick in ButtonContainer.js: (randomCells)
-  const setCorrectChoices = (choices) => {
-    correctChoices = choices
-  }
+  // const setCorrectChoices = (choices) => {
+  //   correctChoices = choices;
+  //   console.log(correctChoices);
+  // };
 
   // reset entire grid to original state
   const resetGrid = () => {
-    console.log(correctChoices);
     setCells(initialState());
   };
 
@@ -56,7 +56,14 @@ function Grid() {
       <div className="grid-container">
         <div className="grid">
           {cells.map((cell) => {
-            return <Cell key={cell.key} color={cell.color} id={cell.key} correctChoices={correctChoices}/>;
+            return (
+              <Cell
+                key={cell.key}
+                color={cell.color}
+                id={cell.key}
+                correctChoices={correctChoices}
+              />
+            );
           })}
         </div>
       </div>

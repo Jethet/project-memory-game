@@ -1,14 +1,22 @@
 import React from "react";
 
 function Cell(props) {
+  
   const handleClick = () => {
     console.log("Clicked", props.id);
+    let startColor = props.color
     let correctColor = "green"
     let incorrectColor = "red"
-    if (props.id in props.correctChoices) {
-      props.background = correctColor
+    if (props.correctChoices.includes(props.id)) {
+      console.log(props.correctChoices);
+      
+      // startColor = correctColor
+      
+      // console.log(startColor);
+      // console.log(correctColor);
+      
     } else {
-      props.background = incorrectColor
+      startColor = incorrectColor
     }
   };
 
