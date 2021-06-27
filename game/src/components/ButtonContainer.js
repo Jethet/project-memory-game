@@ -3,11 +3,11 @@ import React, { useState } from "react";
 function ButtonContainer(props) {
   const [disable, setDisable] = useState(false)
 
-  // when the PLAY button is clicked, 7 random cells are selected and colorBlue is run
+  // when the PLAY button is clicked, 7 random cells are selected and colorGame is run
   const handleClick = () => {
     let randomCells = props.selectRandom(7);
     props.setCorrectChoices(randomCells)    
-    props.colorBlue(randomCells);
+    props.colorGame(randomCells);
     setDisable(true)
   };
 

@@ -30,7 +30,7 @@ function Grid() {
   }
 
   // a cells array is passed in and cells become blue
-  const colorBlue = (cellsArray, color) => {
+  const colorGame = (cellsArray, color) => {
     let newCellsState = cells.slice();
     color = "rgb(24, 73, 73)";
     cellsArray.map((item) => (newCellsState[item].color = color));
@@ -70,7 +70,7 @@ function Grid() {
       <ButtonContainer
         selectRandom={selectRandom}
         resetGrid={resetGrid}
-        colorBlue={colorBlue}
+        colorGame={colorGame}
         setCorrectChoices={setCorrectChoices}
       />
     </div>
