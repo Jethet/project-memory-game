@@ -1,23 +1,21 @@
 import React from "react";
 
 function Cell(props) {
-  
+
   const handleClick = () => {
-    console.log("Clicked", props.id);
-    let startColor = props.color
-    let correctColor = "green"
-    let incorrectColor = "red"
+    let newColor = props.color
+    // this checks if a cell(id) is in the random array
     if (props.correctChoices.includes(props.id)) {
-      console.log(props.correctChoices);
-      
-      // startColor = correctColor
-      
-      // console.log(startColor);
-      // console.log(correctColor);
-      
-    } else {
-      startColor = incorrectColor
+      console.log("is in correctChoices",props.id, props.color);
+      // if it is in that array, the cell has to change color to green when clicked
+      newColor = "green"
+      console.log("this is after setColor", newColor);
     }
+    // } else {
+    //   setColor("red")
+    // }
+
+    // props.correctChoices.includes(props.id) ? setColor("green") : setColor("red")
   };
 
   return (

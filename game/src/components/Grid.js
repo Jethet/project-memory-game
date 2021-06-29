@@ -5,7 +5,6 @@ import ButtonContainer from "./ButtonContainer";
 function Grid() {
   const [cells, setCells] = useState(initialState());
   const [correctChoices, setCorrectChoices] = useState([]);
-  // let correctChoices = []
 
   // create an array of 25 cells with key and color properties;
   // this is the initial state of the grid
@@ -38,13 +37,6 @@ function Grid() {
     // after five seconds, the cells turn white again
     setTimeout(resetGrid, 5000);
   };
-
-  // put values of choices into global variable correctChoices
-  // e.g. from handleClick in ButtonContainer.js: (randomCells)
-  // const setCorrectChoices = (choices) => {
-  //   correctChoices = choices;
-  //   console.log(correctChoices);
-  // };
 
   // reset entire grid to original state
   const resetGrid = () => {
