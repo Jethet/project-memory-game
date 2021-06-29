@@ -29,14 +29,18 @@ function Grid() {
   }
 
   // a cells array is passed in and cells become blue
-  const colorGame = (cellsArray, color) => {
-    let newCellsState = cells.slice();
-    color = "rgb(24, 73, 73)";
-    cellsArray.map((item) => (newCellsState[item].color = color));
-    setCells(newCellsState);
+  const startGame = (cellsArray) => {
+    colorCells(cellsArray, "rgb(24, 73, 73)")
     // after five seconds, the cells turn white again
     setTimeout(resetGrid, 5000);
   };
+
+  // modifies state so that cells in cellsArray change color
+  const colorCells = (cellsArray, color) => {
+    let newCellsState = cells.slice();
+    cellsArray.map((item) => (newCellsState[item].color = color));
+    setCells(newCellsState);
+  }
 
   // reset entire grid to original state
   const resetGrid = () => {
@@ -54,6 +58,7 @@ function Grid() {
                 color={cell.color}
                 id={cell.key}
                 correctChoices={correctChoices}
+                colorCells={colorCells}
               />
             );
           })}
@@ -62,7 +67,7 @@ function Grid() {
       <ButtonContainer
         selectRandom={selectRandom}
         resetGrid={resetGrid}
-        colorGame={colorGame}
+        startGame={startGame}
         setCorrectChoices={setCorrectChoices}
       />
     </div>

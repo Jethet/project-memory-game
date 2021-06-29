@@ -7,7 +7,7 @@ function ButtonContainer(props) {
   const handleClick = () => {
     let randomCells = props.selectRandom(7);
     props.setCorrectChoices(randomCells)    
-    props.colorGame(randomCells);
+    props.startGame(randomCells);
     setDisable(true)
   };
 
