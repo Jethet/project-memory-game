@@ -29,7 +29,7 @@ function Grid() {
     return randomIndexes;
   }
 
-  // modifies state so that cells in cellsArray change color
+  // modify state so that cells in cellsArray change color
   const colorCells = (cellsArray, color) => {
     let newCellsState = cells.slice();
     cellsArray.map((item) => (newCellsState[item].color = color));
@@ -38,8 +38,9 @@ function Grid() {
 
   // a cells array is passed in and cells change colour
   const startGame = (cellsArray) => {
+    // this sets the color for the 7 random cells when PLAY is clicked
     colorCells(cellsArray, "rgb(24, 73, 73)")
-    // after five seconds, the cells turn grey again
+    // after five seconds, the 7 cells turn grey again
     setTimeout(resetGrid, 5000);
   };
 

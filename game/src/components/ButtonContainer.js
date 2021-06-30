@@ -8,6 +8,7 @@ function ButtonContainer(props) {
     let randomCells = props.selectRandom(7);
     props.setCorrectChoices(randomCells)    
     props.startGame(randomCells);
+    // the PLAY button cannot be clicked again during the game
     setDisable(true)
   };
 
