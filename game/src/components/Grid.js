@@ -5,13 +5,14 @@ import ButtonContainer from "./ButtonContainer";
 function Grid() {
   const [cells, setCells] = useState(initialState());
   const [correctChoices, setCorrectChoices] = useState([]);
+  const [disable, setDisable] = useState(true)
 
   // create an array of 25 cells with key and color properties;
   // this is the initial state of the grid
   function initialState() {
     let cellsArray = [];
     for (let i = 0; i < 25; i++) {
-      cellsArray.push({ key: i, color: "lightgrey" });
+      cellsArray.push({ key: i, color: "lightgrey"});
     }
     return cellsArray;
   }
@@ -28,19 +29,19 @@ function Grid() {
     return randomIndexes;
   }
 
-  // a cells array is passed in and cells become blue
-  const startGame = (cellsArray) => {
-    colorCells(cellsArray, "rgb(24, 73, 73)")
-    // after five seconds, the cells turn white again
-    setTimeout(resetGrid, 5000);
-  };
-
   // modifies state so that cells in cellsArray change color
   const colorCells = (cellsArray, color) => {
     let newCellsState = cells.slice();
     cellsArray.map((item) => (newCellsState[item].color = color));
     setCells(newCellsState);
   }
+
+  // a cells array is passed in and cells change colour
+  const startGame = (cellsArray) => {
+    colorCells(cellsArray, "rgb(24, 73, 73)")
+    // after five seconds, the cells turn grey again
+    setTimeout(resetGrid, 5000);
+  };
 
   // reset entire grid to original state
   const resetGrid = () => {
@@ -57,6 +58,8 @@ function Grid() {
                 key={cell.key}
                 color={cell.color}
                 id={cell.key}
+                disabled={disable}
+                setDisable={setDisable}
                 correctChoices={correctChoices}
                 colorCells={colorCells}
               />
