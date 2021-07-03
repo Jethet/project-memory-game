@@ -1,7 +1,6 @@
 import React from "react";
 
 function Cell(props) {
-  // const [disable, setDisable] = useState(false)
 
   const handleClick = () => { 
     // this checks if a cell id is in the random array
@@ -15,14 +14,14 @@ function Cell(props) {
   };
 
   const stopTime = () => {
-    props.setDisable(true)
+    props.setDisableCells(true)
   }
 
   return (
     <button
       className="grid-cell"
       style={{ backgroundColor: props.color }}
-      disabled={props.disable}
+      disabled={props.disableCells}
       onClick={handleClick}
     ></button>
   );

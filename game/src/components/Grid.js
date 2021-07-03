@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cell from "./Cell";
 import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
   const [cells, setCells] = useState(initialState());
   const [correctChoices, setCorrectChoices] = useState([]);
-  const [disable, setDisable] = useState({ disabled: true });
+  const [disableCells, setDisableCells] = useState({ disabled: true });
+  // let [, setState] = useState()
 
   // create an array of 25 cells with key, color and disabled properties;
   // this is the initial state of the grid
@@ -47,13 +48,20 @@ function Grid() {
     // after five seconds, the 7 cells turn grey again
     setTimeout(resetGrid, 5000);
     // cells in the grid are made clickable
-    setDisable(false);
+    setDisableCells(false);
   };
 
   // reset entire grid to original state
   const resetGrid = () => {
     setCells(initialState())
   };
+
+  // passing an empty object into setState will rerender the component
+  // const endGame = () => {
+  //   console.log("End");
+    
+  //   setState({})
+  // }
 
 
   return (
@@ -66,8 +74,8 @@ function Grid() {
                 key={cell.key}
                 color={cell.color}
                 id={cell.key}
-                disable={disable}
-                setDisable={setDisable}
+                disableCells={disableCells}
+                setDisableCells={setDisableCells}
                 correctChoices={correctChoices}
                 colorCells={colorCells}
               />
@@ -77,9 +85,10 @@ function Grid() {
       </div>
       <ButtonContainer
         selectRandom={selectRandom}
-        resetGrid={resetGrid}
-        startGame={startGame}
         setCorrectChoices={setCorrectChoices}
+        setDisableCells={setDisableCells}
+        startGame={startGame}
+        resetGrid={resetGrid}
       />
     </div>
   );
