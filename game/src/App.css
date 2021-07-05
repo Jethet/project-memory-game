@@ -83,7 +83,7 @@ body {
   background-color: rgb(33, 34, 30);
 }
 
-.button-clear {
+.button-restart {
   background-color: rgb(42, 43, 39);
   color:lightgray;
   margin-left: 10px;
@@ -93,7 +93,7 @@ body {
   font-weight: 900;
 }
 
-.button-clear:hover {
+.button-restart:hover {
   background-color: rgb(33, 34, 30);
 }
 

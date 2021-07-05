@@ -7,7 +7,7 @@ function ButtonContainer(props) {
   const handleClick = () => {
     let randomCells = props.selectRandom(7);
     props.setCorrectChoices(randomCells)    
-    props.startGame(randomCells);
+    props.startGameTime(randomCells);
     // the PLAY button cannot be clicked again during the game
     setDisable(true)
   };
@@ -17,8 +17,8 @@ function ButtonContainer(props) {
       <button className="button-play" disabled={disable} onClick={handleClick}>
         PLAY!
       </button>
-      <button className="button-clear" onClick={props.resetGrid}>
-        CLEAR
+      <button className="button-restart" onClick={props.restartGame}>
+        RESTART
       </button>
     </div>
   );

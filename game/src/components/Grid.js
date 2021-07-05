@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, setState } from "react";
 import Cell from "./Cell";
 import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
-  const [cells, setCells] = useState(initialState());
+  const [cells, setCells] = useState(initialCellState());
   const [correctChoices, setCorrectChoices] = useState([]);
   const [disableCells, setDisableCells] = useState({ disabled: true });
-  // let [, setState] = useState()
+  const [buttons, setButtons] = useState(initialButtonState());
 
   // create an array of 25 cells with key, color and disabled properties;
   // this is the initial state of the grid
-  function initialState() {
+  function initialCellState() {
     let cellsArray = [];
     for (let i = 0; i < 25; i++) {
       cellsArray.push({ key: i, color: "lightgrey" });
     }
     return cellsArray;
+  }
+
+  function initialButtonState() {
+    return {disabled: false}
   }
 
   // create an array of random cells (this is used by the PLAY button)
@@ -42,27 +46,28 @@ function Grid() {
   };
 
   // a cells array is passed in and cells change colour
-  const startGame = (cellsArray) => {
+  const startGameTime = (cellsArray) => {
     // this sets the color for the 7 random cells when PLAY is clicked
     colorCells(cellsArray, "rgb(24, 73, 73)");
     // after five seconds, the 7 cells turn grey again
-    setTimeout(resetGrid, 5000);
+    setTimeout(startGamePlay, 5000);
+  };
+
+  // reset grid colors and allow player to click the cells
+  const startGamePlay = () => {
+    resetGridColors();
     // cells in the grid are made clickable
     setDisableCells(false);
   };
 
-  // reset entire grid to original state
-  const resetGrid = () => {
-    setCells(initialState())
+  // reset entire grid colors to original state
+  const resetGridColors = () => {
+    setCells(initialCellState());
   };
 
-  // passing an empty object into setState will rerender the component
-  // const endGame = () => {
-  //   console.log("End");
-    
-  //   setState({})
-  // }
-
+  const restartGame = () => {
+    resetGridColors();
+  };
 
   return (
     <div className="wrapper">
@@ -87,8 +92,8 @@ function Grid() {
         selectRandom={selectRandom}
         setCorrectChoices={setCorrectChoices}
         setDisableCells={setDisableCells}
-        startGame={startGame}
-        resetGrid={resetGrid}
+        startGameTime={startGameTime}
+        restartGame={restartGame}
       />
     </div>
   );
