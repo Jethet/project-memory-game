@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Grid from "./components/Grid"
+import Game from "./components/Game"
 import Header from "./components/Header"
 
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Grid />
+      <Game />
     </div>
   );
 }
