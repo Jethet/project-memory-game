@@ -6,10 +6,7 @@ function Game() {
   const [cells, setCells] = useState(initialCellState());
   const [correctChoices, setCorrectChoices] = useState([]);
   const [disableCells, setDisableCells] = useState({ disabled: true });
-  const [buttons, setButtons] = useState(initialButtonState());
   const [disableButton, setDisableButton] = useState(false)
-
-  // const [name, setName] = useState("")
 
   // create an array of 25 cells with key, color and disabled properties;
   // this is the initial state of the grid
@@ -19,10 +16,6 @@ function Game() {
       cellsArray.push({ key: i, color: "lightgrey" });
     }
     return cellsArray;
-  }
-
-  function initialButtonState() {
-    return { disabled: false };
   }
 
   // create an array of random cells (this is used by the PLAY button)
@@ -60,10 +53,9 @@ function Game() {
   // a cells array is passed in and cells change colour
   const startGameTime = (cellsArray) => {
     // this sets the color for the 7 random cells when PLAY is clicked
-    colorCells(cellsArray, "rgb(24, 73, 73)");
+    colorCells(cellsArray, "rgb(75, 53, 93)");
     // after five seconds, the 7 cells turn grey again
-    setTimeout(startGamePlay, 5000);
-     
+    setTimeout(startGamePlay, 5000);  
   };
 
   // reset grid colors and allow player to click the cells
@@ -108,7 +100,6 @@ function Game() {
         <div className="button-play">
           <Button
             name={"PLAY!"}
-            setButtons={setButtons}
             onClick={handlePlay}
             selectRandom={selectRandom}
             setCorrectChoices={setCorrectChoices}

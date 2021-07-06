@@ -8,7 +8,7 @@ function Button(props) {
         disabled={props.disableButton}
         style={{ backgroundColor: "rgb(42, 43, 39)", border: "none", color: "lightgray"}}
       >
-        {props.name}
+      <h2>{props.name}</h2>
       </button>
     </div>
   );
