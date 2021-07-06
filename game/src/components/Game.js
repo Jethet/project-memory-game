@@ -7,6 +7,8 @@ function Game() {
   const [correctChoices, setCorrectChoices] = useState([]);
   const [disableCells, setDisableCells] = useState({ disabled: true });
   const [buttons, setButtons] = useState(initialButtonState());
+  const [disableButton, setDisableButton] = useState(false)
+
   // const [name, setName] = useState("")
 
   // create an array of 25 cells with key, color and disabled properties;
@@ -52,7 +54,7 @@ function Game() {
     setCorrectChoices(randomCells);
     startGameTime(randomCells);
     // the PLAY button cannot be clicked again during the game
-    // setDisable(true)
+    setDisableButton(true)
   };
 
   // a cells array is passed in and cells change colour
@@ -61,6 +63,7 @@ function Game() {
     colorCells(cellsArray, "rgb(24, 73, 73)");
     // after five seconds, the 7 cells turn grey again
     setTimeout(startGamePlay, 5000);
+     
   };
 
   // reset grid colors and allow player to click the cells
@@ -77,6 +80,9 @@ function Game() {
 
   const restartGame = () => {
     resetGridColors();
+    setDisableButton(false)
+    // cells in the grid are no longer clickable
+    setDisableCells(true);
   };
 
   return (
@@ -107,11 +113,13 @@ function Game() {
             selectRandom={selectRandom}
             setCorrectChoices={setCorrectChoices}
             setDisableCells={setDisableCells}
+            disableButton={disableButton}
+            setDisableButton={setDisableButton}
             startGameTime={startGameTime}
           />
         </div>
         <div className="button-restart">
-          <Button name={"RESTART"} onClick={restartGame} />
+          <Button name={"REPLAY"} onClick={restartGame} />
         </div>
       </div>
     </div>

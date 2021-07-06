@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'arial-black';
+  src: local('Arial Black');
+
+}
+
 body {
   margin: 0 auto;
   display: flex;
@@ -75,8 +81,8 @@ body {
   margin-right: 10px;
   border-radius: 35px;
   color:lightgray;
-  font-size: 1.2em;
-  font-weight: 900;
+  /* font-family: "Arial Black", Gadget, Arial, sans-serif;
+  font-weight: 900; */
 }
 
 .button-play:hover {
@@ -85,12 +91,13 @@ body {
 
 .button-restart {
   background-color: rgb(42, 43, 39);
-  color:lightgray;
-  margin-left: 10px;
   border: thin solid gray;
+  padding: 10px;
+  margin-right: 10px;
   border-radius: 35px;
-  font-size: 1.2em;
-  font-weight: 900;
+  color:lightgray;
+  /* font-size: 1.2em;
+  font-weight: 900; */
 }
 
 .button-restart:hover {
