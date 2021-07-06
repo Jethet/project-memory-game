@@ -1,5 +1,5 @@
 import React, { useState, setState } from "react";
-import Cell from "./Cell";
+import Cell from "../components/Cell";
 import ButtonContainer from "./ButtonContainer";
 
 function Grid() {
