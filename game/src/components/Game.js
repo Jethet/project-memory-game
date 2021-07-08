@@ -6,14 +6,14 @@ function Game() {
   const [cells, setCells] = useState(initialCellState());
   const [correctChoices, setCorrectChoices] = useState([]);
   const [disableCells, setDisableCells] = useState({ disabled: true });
-  const [disableButton, setDisableButton] = useState(false)
+  const [disableButton, setDisableButton] = useState(false);
 
   // create an array of 25 cells with key, color and disabled properties;
   // this is the initial state of the grid
   function initialCellState() {
     let cellsArray = [];
-    for (let i = 0; i < 25; i++) {
-      cellsArray.push({ key: i, color: "lightgrey" });
+    for (let i = 0; i < 25; i++) {      
+      cellsArray.push({ key: i, color: "lightgrey"});
     }
     return cellsArray;
   }
@@ -47,7 +47,7 @@ function Game() {
     setCorrectChoices(randomCells);
     startGameTime(randomCells);
     // the PLAY button cannot be clicked again during the game
-    setDisableButton(true)
+    setDisableButton(true);
   };
 
   // a cells array is passed in and cells change colour
@@ -55,7 +55,7 @@ function Game() {
     // this sets the color for the 7 random cells when PLAY is clicked
     colorCells(cellsArray, "rgb(75, 53, 93)");
     // after five seconds, the 7 cells turn grey again
-    setTimeout(startGamePlay, 5000);  
+    setTimeout(startGamePlay, 5000);
   };
 
   // reset grid colors and allow player to click the cells
@@ -72,7 +72,7 @@ function Game() {
 
   const restartGame = () => {
     resetGridColors();
-    setDisableButton(false)
+    setDisableButton(false);
     // cells in the grid are no longer clickable
     setDisableCells(true);
   };
