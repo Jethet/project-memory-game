@@ -8,6 +8,7 @@ function Cell(props) {
     if (props.correctChoices.includes(props.id)) {
       // if the cell is in the random array, it has to change color to green when clicked
       props.colorCells([props.id], "rgb(39, 108, 76)");
+      props.setCount(props.count + 1)
     } else {
       props.colorCells([props.id], "rgb(169, 49, 44)");
     }

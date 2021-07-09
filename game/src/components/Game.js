@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Counter from "./Counter";
 import Cell from "./Cell";
 import Button from "./Button";
 
@@ -7,13 +8,14 @@ function Game() {
   const [correctChoices, setCorrectChoices] = useState([]);
   const [disableCells, setDisableCells] = useState({ disabled: true });
   const [disableButton, setDisableButton] = useState(false);
+  const [count, setCount] = useState(0);
 
   // create an array of 25 cells with key, color and disabled properties;
   // this is the initial state of the grid
   function initialCellState() {
     let cellsArray = [];
-    for (let i = 0; i < 25; i++) {      
-      cellsArray.push({ key: i, color: "lightgrey"});
+    for (let i = 0; i < 25; i++) {
+      cellsArray.push({ key: i, color: "lightgrey" });
     }
     return cellsArray;
   }
@@ -72,6 +74,7 @@ function Game() {
 
   const restartGame = () => {
     resetGridColors();
+    setCount(0)
     setDisableButton(false);
     // cells in the grid are no longer clickable
     setDisableCells(true);
@@ -79,6 +82,7 @@ function Game() {
 
   return (
     <div className="wrapper">
+      <Counter count={count} />
       <div className="grid-container">
         <div className="grid">
           {cells.map((cell) => {
@@ -91,6 +95,8 @@ function Game() {
                 setDisableCells={setDisableCells}
                 correctChoices={correctChoices}
                 colorCells={colorCells}
+                count={count}
+                setCount={setCount}
               />
             );
           })}

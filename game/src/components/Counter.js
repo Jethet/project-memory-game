@@ -1,9 +1,9 @@
 import React from "react";
 
-function Counter() {
+function Counter(props) {
   return (
     <div>
-      <h2 className="score-field">YOUR SCORE: {count}</h2>
+      <h1 className="score-field">YOUR SCORE: {props.count}</h1>
     </div>
   );
 }

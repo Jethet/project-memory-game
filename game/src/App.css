@@ -32,7 +32,6 @@ body {
   flex-direction: column;
   align-items: center;
   width: 70%;
-  margin-bottom: 20px;
 }
 
 .explanation-text p {
@@ -45,6 +44,7 @@ body {
 .score-field {
   color: rgb(206, 206, 201);
   font-weight: bolder;
+  margin-bottom: 15px;
 }
 
 .wrapper {
