@@ -1,5 +1,6 @@
 import React from "react";
 import GameExplanation from "./GameExplanation"
+import Counter from "./Counter";
 
 function Header() {
   return (
@@ -9,6 +10,7 @@ function Header() {
           <h1>Welcome to the Memory Game!</h1>
         </div>
         <GameExplanation />
+        <Counter />
       </div>
     </div>
   );
