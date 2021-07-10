@@ -6,7 +6,7 @@ function Header() {
     <div>
       <div className="app-header">
         <div className="welcome-text">
-          <h1>Welcome to the Memory Game!</h1>
+          <h1>How's your MEMORY?!</h1>
         </div>
         <GameExplanation />
       </div>

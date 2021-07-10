@@ -18,7 +18,7 @@ body {
 .welcome-text {
   display: flex;
   justify-content: center;
-  width: 57%;
+  width: 45%;
 }
 
 .app-header h1 {
@@ -65,7 +65,8 @@ body {
 }
 
 .grid-cell {
-  border-radius: 100px;
+  border-radius: 50px;
+  height: 60px;
   margin: 4px;
 }
 
@@ -85,8 +86,6 @@ h2 {
   margin-right: 10px;
   border-radius: 35px;
   color:lightgray;
-  /* font-family: "Arial Black", Gadget, Arial, sans-serif;
-  font-weight: 900; */
 }
 
 .button-play:hover {
@@ -101,8 +100,6 @@ h2 {
   margin-left: 10px;
   border-radius: 35px;
   color:lightgray;
-  /* font-size: 1.2em;
-  font-weight: 900; */
 }
 
 .button-restart:hover {
