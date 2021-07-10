@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Cell(props) {
-  const [border, setBorder] = useState("1px solid grey");
 
   const handleClick = () => {
     // this checks if a cell id is in the random array
@@ -17,27 +16,13 @@ function Cell(props) {
 
   const stopTime = () => {
     props.setDisableCells(true);
-    showSolution();
   };
 
-  const showSolution = () => {
-    let solutionArray = [];
-    props.correctChoices.forEach((item) => {
-      solutionArray.push({ key: item, border: border });
-      return solutionArray;
-    });
-    setBorder("3px solid yellow")
-    console.log(solutionArray);
-  };
-
-  const resetBorder = () => {
-    setTimeout(setBorder("1px solid lightgrey"), 5000)
-  };
-
+  
   return (
     <button
       className="grid-cell"
-      style={{ backgroundColor: props.color, border: border }}
+      style={{ backgroundColor: props.color }}
       disabled={props.disableCells}
       onClick={handleClick}
     ></button>
