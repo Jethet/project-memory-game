@@ -3,14 +3,12 @@ import GameExplanation from "./GameExplanation"
 
 function Header() {
   return (
-    <div>
       <div className="app-header">
         <div className="welcome-text">
-          <h1>How's your MEMORY?!</h1>
+          <h1>MEMORY CRUNCH</h1>
         </div>
         <GameExplanation />
       </div>
-    </div>
   );
 }
 

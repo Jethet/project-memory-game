@@ -4,8 +4,8 @@ function GameExplanation() {
 
   return (
     <div className="explanation-text">
-      <p>5 seconds to memorise the circles</p>
-      <p>5 seconds to click the right ones</p>
+      <p>5 seconds to memorise</p>
+      <p>5 seconds to click</p>
     </div>
   );
 }

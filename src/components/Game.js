@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Counter from "./Counter";
 import Cell from "./Cell";
 import Button from "./Button";
-import CounterOnPage from "./CounterOnPage"
+import CountdownTime from "./CountdownTime";
 
 function Game() {
   const [cells, setCells] = useState(initialCellState());
@@ -66,7 +66,7 @@ function Game() {
   // a cells array is passed in and cells change colour
   const startGameTime = (cellsArray) => {
     // this sets the color for the 7 random cells when PLAY is clicked
-      colorCells(cellsArray, "rgb(75, 53, 93)");
+    colorCells(cellsArray, "rgb(75, 53, 93)");
 
     // after five seconds, the 7 cells turn grey again
     setTimeout(startGamePlay, 5000);
@@ -94,8 +94,11 @@ function Game() {
 
   return (
     <div className="wrapper">
-      <Counter count={count} />
-      <CounterOnPage timeCount={timeCount}/>
+      <div className="score-field">
+        <Counter count={count} />
+        <CountdownTime timeCount={timeCount} />
+      </div>
+
       <div className="grid-container">
         <div className="grid">
           {cells.map((cell) => {
