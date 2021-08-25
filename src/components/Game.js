@@ -134,7 +134,7 @@ function Game() {
           />
         </div>
         <div className="button-restart">
-          <Button name={"REPLAY"} onClick={restartGame} />
+          <Button name={"CLEAR"} onClick={restartGame} />
         </div>
       </div>
     </div>
