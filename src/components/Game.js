@@ -10,13 +10,19 @@ function Game() {
   const [disableCells, setDisableCells] = useState({ disabled: true });
   const [disableButton, setDisableButton] = useState(false);
   const [count, setCount] = useState(0);
-  const [timeCount, setTimeCount] = useState(5);
+  const [timeCount, setTimeCount] = useState(undefined);
 
   useEffect(() => {
     const countDown =
-      timeCount > 0 && setInterval(() => setTimeCount(timeCount - 1), 1000);      
+      timeCount > 0 && setInterval(() => setTimeCount(timeCount - 1), 1000);
+      // 'return' is used for the cleanup, clearInterval in this case
     return () => clearInterval(countDown);
   }, [timeCount]);
+
+  useEffect(() => {
+    timeCount === 0 ? colorCells(correctChoices, "yellow") : ''
+  }, [timeCount]);
+
 
   // create an array of 25 cells with key, color and disabled properties;
   // this is the initial state of the grid
