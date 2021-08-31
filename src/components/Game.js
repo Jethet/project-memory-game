@@ -11,6 +11,8 @@ function Game() {
   const [disableButton, setDisableButton] = useState(false);
   const [count, setCount] = useState(0);
   const [timeCount, setTimeCount] = useState(undefined);
+  // timeCount has to be undefined: if it has a value, useEffect() will treat it as a change event
+  // and run the countDown function already (makes the countdown start on loading the page)
 
   useEffect(() => {
     const countDown =
@@ -20,7 +22,10 @@ function Game() {
   }, [timeCount]);
 
   useEffect(() => {
-    timeCount === 0 ? colorCells(correctChoices, "yellow") : ''
+    if (timeCount === 0) {
+      console.log("Check timecount")
+      colorCells(correctChoices, undefined, "10px dotted rgb(90, 63, 112)")
+    }
   }, [timeCount]);
 
 
@@ -29,7 +34,7 @@ function Game() {
   function initialCellState() {
     let cellsArray = [];
     for (let i = 0; i < 25; i++) {
-      cellsArray.push({ key: i, color: "lightgrey" });
+      cellsArray.push({ key: i, color: "lightgrey", border: "5px solid lightgrey" });
     }
     return cellsArray;
   }
@@ -47,11 +52,16 @@ function Game() {
   }
 
   // modify state so that cells in cellsArray change color
-  const colorCells = (cellsToColor, color) => {
+  const colorCells = (cellsToColor, color = undefined, border = undefined) => {
     let newCellsState = cells.slice();
     for (let i = 0; i < newCellsState.length; i++) {
       if (cellsToColor.includes(newCellsState[i].key)) {
-        newCellsState[i].color = color;
+        if (color !== undefined) {
+          newCellsState[i].color = color;
+        }
+        if (border !== undefined) {
+          newCellsState[i].border = border;
+        }
       }
     }
     // console.log(newCellsState);
@@ -72,7 +82,7 @@ function Game() {
   // a cells array is passed in and cells change colour
   const startGameTime = (cellsArray) => {
     // this sets the color for the 7 random cells when PLAY is clicked
-    colorCells(cellsArray, "rgb(90, 63, 112)");
+    colorCells(cellsArray, "rgb(90, 63, 112)", "5px solid rgb(90, 63, 112)");
 
     // after five seconds, the 7 cells turn grey again
     setTimeout(startGamePlay, 5000);
@@ -114,6 +124,7 @@ function Game() {
                 key={cell.key}
                 color={cell.color}
                 id={cell.key}
+                border={cell.border}
                 disableCells={disableCells}
                 setDisableCells={setDisableCells}
                 correctChoices={correctChoices}
