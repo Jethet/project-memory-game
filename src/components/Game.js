@@ -26,7 +26,7 @@ function Game() {
       console.log("Check timecount")
       colorCells(correctChoices, undefined, "10px dotted rgb(90, 63, 112)")
     }
-  }, [timeCount]);
+  }, [timeCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
 
   // create an array of 25 cells with key, color and disabled properties;
