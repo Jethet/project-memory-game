@@ -4,6 +4,7 @@ This project is a memory game, built as React practice and learning about hooks.
 
 Screenshots:  
 
+---
 
                                        <img src="/screenshot_game1.png" width="250"  />          <img src="/screenshot_game2.png" width="250"  />
 
